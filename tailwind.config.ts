@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				pastel: {
+					pink: '#FFD6E8',
+					purple: '#E6D6FF',
+					blue: '#D6E8FF',
+					green: '#D6FFE8',
+					yellow: '#FFFFD6',
+					orange: '#FFE8D6'
 				}
 			},
 			borderRadius: {
@@ -84,11 +93,42 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'glitter': {
+					'0%, 100%': {
+						opacity: '0',
+						transform: 'scale(0) rotate(0deg)'
+					},
+					'50%': {
+						opacity: '1',
+						transform: 'scale(1) rotate(180deg)'
+					}
+				},
+				'sparkle': {
+					'0%, 100%': {
+						opacity: '0',
+						transform: 'scale(0)'
+					},
+					'50%': {
+						opacity: '1',
+						transform: 'scale(1)'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0px)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'glitter': 'glitter 2s ease-in-out infinite',
+				'sparkle': 'sparkle 1.5s ease-in-out infinite',
+				'float': 'float 3s ease-in-out infinite'
 			}
 		}
 	},

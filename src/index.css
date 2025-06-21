@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -98,6 +99,55 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-gradient-to-br from-pastel-pink via-pastel-purple to-pastel-blue text-foreground;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glitter-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glitter-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 40%, rgba(221, 160, 221, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(173, 216, 230, 0.3) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .glitter-effect {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: linear-gradient(45deg, #ff69b4, #dda0dd, #87ceeb);
+    border-radius: 50%;
+    animation: glitter 2s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .sparkle {
+    position: absolute;
+    font-size: 12px;
+    color: #ff69b4;
+    animation: sparkle 1.5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .star-pattern {
+    background-image: radial-gradient(circle at 25% 25%, #ffb6c1 2px, transparent 2px),
+                      radial-gradient(circle at 75% 75%, #dda0dd 2px, transparent 2px);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
   }
 }
